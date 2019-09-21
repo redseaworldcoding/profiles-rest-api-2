@@ -121,3 +121,6 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
+
+# 23. Set our custom user model
+AUTH_USER_MODEL = 'profiles_api.UserProfile'  # look in our profiels_api and look for our model called UserProfile models
