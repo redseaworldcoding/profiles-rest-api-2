@@ -17,7 +17,7 @@ class UserProfileManager(BaseUserManager):
         user = self.model(email=email, name=name)  # creates a new models that the user manager is representing....
 
         user.set_password(password)   # puts the password into hash incryption....
-        user.safe(using=self._db)    # standard procedure in djange of saving user information
+        user.save(using=self._db)    # standard procedure in djange of saving user information
 
         return user
 
@@ -55,7 +55,7 @@ class UserProfile(AbstractBaseUser, PermissionsMixin):
 
     def get_short_name(self):
         """retrieve short name of the user"""
-        return self.NAME
+        return self.name
 
 # Finally, we need  to specify string specification of our user profiles_api
 def __str__(self):
